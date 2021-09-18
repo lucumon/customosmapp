@@ -1754,7 +1754,7 @@ var vectorLayer = new ol.layer.Vector({
 					color: '#0000ff',
 					width: 1.25
 				});
-				var icon = new.ol.style.Icon({
+				var icon = new ol.style.Icon({
 					src: wikidata_logo_url,
 					scale: 0.4
 				});
