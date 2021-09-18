@@ -1740,9 +1740,13 @@ var vectorLayer = new ol.layer.Vector({
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:#0000ff',
 			style: function (feature) {
-				var key_regex = /^name:194[0-9]$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
+				var brand_key_regex = /^brand$/
+				var brand_key = feature.getKeys().filter(function(t){return t.match(brand_key_regex)}).pop() || "brand"
+				var brand = feature.get(brand_key) || '';
+				var wikidata_key_regex = /^brand:wikidata$/
+				var wikidata_key = feature.getKeys().filter(function(t){return t.match(wikidata_key_regex)}).pop() || "brand:wikidata"
+				var wikidata = feature.get(wikidata_key) || '';
+				var wikidata_logo_url = "https://commons.wikimedia.org/wiki/File:McDonald%E2%80%99s_gr%C3%BCn_logo.svg"
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,0,255,0.4)'
 				});
@@ -1751,14 +1755,12 @@ var vectorLayer = new ol.layer.Vector({
 					width: 1.25
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Circle({
-						fill: fill,
-						stroke: stroke,
-						radius: 5
+					image: new ol.style.Icon({
+						src: wikidata_logo_url,
 					}),
-							text: new ol.style.Text({
-								text: name
-							}),
+					text: new ol.style.Text({
+						text: name
+					}),
 					fill: fill,
 					stroke: stroke
 				});
