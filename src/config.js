@@ -1746,7 +1746,7 @@ var vectorLayer = new ol.layer.Vector({
 				var wikidata_key_regex = /^brand:wikidata$/
 				var wikidata_key = feature.getKeys().filter(function(t){return t.match(wikidata_key_regex)}).pop() || "brand:wikidata"
 				var wikidata = feature.get(wikidata_key) || '';
-				var json = `https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P154&entity=${wikidata}&format=json`
+				var json = `https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P154&entity=Q38076&format=json`
 				var obj = JSON.parse(json)
 				var logo_filename = obj[claims][P154][mainsnak][datavalue][value]
 				var fill = new ol.style.Fill({
