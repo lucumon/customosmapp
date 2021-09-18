@@ -1758,7 +1758,7 @@ var vectorLayer = new ol.layer.Vector({
 					image: new ol.style.Icon({
 						scale: 0.4,
 						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png'
-					}).
+					}),
 					text: new ol.style.Text({
 						text: brand
 					}),
