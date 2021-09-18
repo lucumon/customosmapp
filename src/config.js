@@ -1746,7 +1746,7 @@ var vectorLayer = new ol.layer.Vector({
 				var wikidata_key_regex = /^brand:wikidata$/
 				var wikidata_key = feature.getKeys().filter(function(t){return t.match(wikidata_key_regex)}).pop() || "brand:wikidata"
 				var wikidata = feature.get(wikidata_key) || '';
-				var wikidata_logo_url = "https://commons.wikimedia.org/wiki/File:McDonald%E2%80%99s_gr%C3%BCn_logo.svg"
+				var wikidata_logo_url = 'https://commons.wikimedia.org/wiki/File:McDonald%E2%80%99s_gr%C3%BCn_logo.svg'
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,0,255,0.4)'
 				});
@@ -1754,12 +1754,14 @@ var vectorLayer = new ol.layer.Vector({
 					color: '#0000ff',
 					width: 1.25
 				});
+				var icon = new.ol.style.Icon({
+					src: wikidata_logo_url,
+					scale: 0.4
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: wikidata_logo_url,
-					}),
+					image: icon,
 					text: new ol.style.Text({
-						text: name
+						text: brand
 					}),
 					fill: fill,
 					stroke: stroke
