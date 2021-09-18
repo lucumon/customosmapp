@@ -1746,7 +1746,9 @@ var vectorLayer = new ol.layer.Vector({
 				var wikidata_key_regex = /^brand:wikidata$/
 				var wikidata_key = feature.getKeys().filter(function(t){return t.match(wikidata_key_regex)}).pop() || "brand:wikidata"
 				var wikidata = feature.get(wikidata_key) || '';
-				var wikidata_logo_url = 'https://commons.wikimedia.org/wiki/File:McDonald%E2%80%99s_gr%C3%BCn_logo.svg'
+				var json = `https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P154&entity=${wikidata}&format=json`
+				var obj = JSON.parse(json)
+				var logo_filename = obj[claims][P154][mainsnak][datavalue][value]
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,0,255,0.4)'
 				});
@@ -1757,7 +1759,7 @@ var vectorLayer = new ol.layer.Vector({
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.4,
-						src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg'
+						src: `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${logo_filename}&width=300` 
 					}),
 					text: new ol.style.Text({
 						text: brand
