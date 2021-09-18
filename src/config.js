@@ -1757,7 +1757,7 @@ var vectorLayer = new ol.layer.Vector({
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.4,
-						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png'
+						src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg'
 					}),
 					text: new ol.style.Text({
 						text: brand
