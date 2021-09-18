@@ -1759,7 +1759,7 @@ var vectorLayer = new ol.layer.Vector({
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.4,
-						src: `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${logo_filename}&width=300` 
+						src: `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${logo_filename}` 
 					}),
 					text: new ol.style.Text({
 						text: brand
