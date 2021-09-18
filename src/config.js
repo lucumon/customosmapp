@@ -7,8 +7,8 @@ var imgSrc = 'src/img/';
 
 var config = {
 	initialConfig: {
-		lon: 1.59647,
-		lat: 41.69689,
+		lon: -8.53280,
+		lat: 42.89200,
 		rotation: 0, //in radians (positive rotation clockwise, 0 means North)
 		zoom: 8,
 		zoomGeolocation: 17,
@@ -1754,12 +1754,11 @@ var vectorLayer = new ol.layer.Vector({
 					color: '#0000ff',
 					width: 1.25
 				});
-				var icon = new ol.style.Icon({
-					src: wikidata_logo_url,
-					scale: 0.4
-				});
 				var style = new ol.style.Style({
-					image: icon,
+					image: new ol.style.Icon({
+						scale: 0.4,
+						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png'
+					})
 					text: new ol.style.Text({
 						text: brand
 					}),
