@@ -1747,6 +1747,7 @@ var vectorLayer = new ol.layer.Vector({
 				var wikidata_key = feature.getKeys().filter(function(t){return t.match(wikidata_key_regex)}).pop() || "brand:wikidata"
 				var wikidata = feature.get(wikidata_key) || '';
 				var json_url = 'https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P154&entity=Q174747&format=json'
+				var data
 				var json = $.ajax({  
 					url: json_url, 
 					data: data, 
