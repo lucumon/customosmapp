@@ -1752,6 +1752,7 @@ var vectorLayer = new ol.layer.Vector({
 				data.property = 'P154'
 				data.entity = 'Q174747'
 				data.format = 'json'
+				data.origin = '*'
 				var json = $.ajax({  
 					url: json_url, 
 					data: data, 
