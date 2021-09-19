@@ -1750,7 +1750,7 @@ var vectorLayer = new ol.layer.Vector({
 				var data = new Object;
 				data.action = 'wbgetclaims'
 				data.property = 'P154'
-				data.entity = wikidata
+				data.entity = 'Q174747'
 				data.format = 'json'
 				var json = $.ajax({  
 					url: json_url, 
